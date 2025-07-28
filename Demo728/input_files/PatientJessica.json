@@ -1,0 +1,228 @@
+{
+  "patientId": "PAT-2025-001",
+  "firstName": "Jessica",
+  "lastName": "Theodore",
+  "dateOfBirth": "2004-12-27",
+  "ssn": "***-**-1234",
+  "gender": "Female",
+  "maritalStatus": "Not Married",
+  "address": {
+    "street": "123 Healthcare Drive",
+    "apartment": "Unit 4B",
+    "city": "East Brunswick",
+    "state": "New Jersey",
+    "zip": "08816",
+    "country": "USA"
+  },
+  "phone": "609-555-0123",
+  "email": "jessica.theodore@quinnipiac.edu",
+  "preferredLanguage": "English",
+  "emergencyContact": {
+    "name": "Vanitha Theodore",
+    "relationship": "Mother",
+    "phone": "609-555-0124",
+    "address": "Same as patient"
+  },
+  "insurance": {
+    "provider": "Blue Cross Blue Shield",
+    "policyNumber": "BC123456789",
+    "groupNumber": "GRP001",
+    "subscriberId": "SUB12345",
+    "effectiveDate": "2024-01-01",
+    "copay": 25,
+    "deductible": 1500
+  },
+  "bloodType": "O+",
+  "allergies": [
+    "Penicillin",
+    "Shellfish",
+    "Latex"
+  ],
+  "currentMedications": [
+    {
+      "name": "Lisinopril",
+      "dosage": "10mg",
+      "frequency": "Daily",
+      "prescribedBy": "Dr. Johnson",
+      "startDate": "2018-03-15",
+      "purpose": "Hypertension"
+    },
+    {
+      "name": "Metformin",
+      "dosage": "500mg",
+      "frequency": "Twice daily",
+      "prescribedBy": "Dr. Johnson",
+      "startDate": "2020-07-22",
+      "purpose": "Type 2 Diabetes"
+    }
+  ],
+  "medicalHistory": [
+    {
+      "condition": "Hypertension",
+      "diagnosedDate": "2018-03-15",
+      "status": "Chronic, controlled",
+      "physician": "Dr. Sarah Johnson, MD"
+    },
+    {
+      "condition": "Type 2 Diabetes",
+      "diagnosedDate": "2020-07-22",
+      "status": "Chronic, well controlled",
+      "physician": "Dr. Sarah Johnson, MD"
+    },
+    {
+      "condition": "Appendectomy",
+      "diagnosedDate": "1995-06-10",
+      "status": "Resolved",
+      "physician": "Dr. Michael Smith, MD"
+    }
+  ],
+  "vitals": {
+    "bloodPressure": "138/82",
+    "heartRate": 76,
+    "temperature": 98.4,
+    "weight": 180,
+    "height": "5'10\"",
+    "bmi": 25.8,
+    "oxygenSaturation": 98,
+    "respiratoryRate": 16,
+    "lastMeasured": "2025-01-27T09:30:00"
+  },
+  "currentVisit": {
+    "date": "2025-01-27",
+    "time": "09:30:00",
+    "department": "Internal Medicine",
+    "chiefComplaint": "Follow-up for diabetes and hypertension management",
+    "presentingSymptoms": [
+      "Occasional dizziness",
+      "Mild fatigue"
+    ],
+    "assessment": "Diabetes well controlled with current regimen. Blood pressure slightly elevated but stable. Patient reports good medication compliance.",
+    "plan": "Continue current medications. Increase blood pressure monitoring. Follow-up in 3 months. Consider dietary consultation.",
+    "physician": "Dr. Sarah Johnson, MD",
+    "nurseNotes": "Patient arrived on time, vital signs stable, no acute distress observed"
+  },
+  "labResults": {
+    "orderDate": "2025-01-25",
+    "resultDate": "2025-01-26",
+    "hba1c": {
+      "value": 6.8,
+      "unit": "%",
+      "normalRange": "< 7.0%",
+      "status": "Normal"
+    },
+    "glucose": {
+      "value": 142,
+      "unit": "mg/dL",
+      "normalRange": "70-140 mg/dL",
+      "status": "Slightly elevated"
+    },
+    "cholesterol": {
+      "total": {
+        "value": 195,
+        "unit": "mg/dL",
+        "normalRange": "< 200 mg/dL",
+        "status": "Normal"
+      },
+      "ldl": {
+        "value": 118,
+        "unit": "mg/dL",
+        "normalRange": "< 130 mg/dL",
+        "status": "Normal"
+      },
+      "hdl": {
+        "value": 52,
+        "unit": "mg/dL",
+        "normalRange": "> 40 mg/dL",
+        "status": "Normal"
+      },
+      "triglycerides": {
+        "value": 125,
+        "unit": "mg/dL",
+        "normalRange": "< 150 mg/dL",
+        "status": "Normal"
+      }
+    },
+    "kidney": {
+      "creatinine": {
+        "value": 1.1,
+        "unit": "mg/dL",
+        "normalRange": "0.7-1.3 mg/dL",
+        "status": "Normal"
+      },
+      "bun": {
+        "value": 18,
+        "unit": "mg/dL",
+        "normalRange": "7-20 mg/dL",
+        "status": "Normal"
+      }
+    }
+  },
+  "imaging": [
+    {
+      "type": "Chest X-Ray",
+      "date": "2024-12-15",
+      "facility": "Princeton Medical Imaging",
+      "result": "Normal cardiac silhouette, clear lungs, no acute findings",
+      "radiologist": "Dr. Emily Chen, MD",
+      "indication": "Annual screening"
+    }
+  ],
+  "immunizations": [
+    {
+      "vaccine": "COVID-19 (Pfizer)",
+      "date": "2024-09-15",
+      "lot": "ABC123",
+      "administeredBy": "Princeton Family Health"
+    },
+    {
+      "vaccine": "Influenza",
+      "date": "2024-10-01",
+      "lot": "FLU456",
+      "administeredBy": "Princeton Family Health"
+    }
+  ],
+  "socialHistory": {
+    "smoking": "Never",
+    "alcohol": "Occasional social drinking",
+    "exercise": "Regular walking, 30 minutes 3x per week",
+    "occupation": "Software Engineer",
+    "maritalStatus": "Married",
+    "children": 2
+  },
+  "familyHistory": {
+    "father": {
+      "status": "Deceased",
+      "conditions": ["Heart disease", "Diabetes"],
+      "ageAtDeath": 68
+    },
+    "mother": {
+      "status": "Living",
+      "age": 72,
+      "conditions": ["Hypertension", "Arthritis"]
+    },
+    "siblings": [
+      {
+        "relationship": "Brother",
+        "age": 45,
+        "conditions": ["None known"]
+      }
+    ]
+  },
+  "advanceDirectives": {
+    "livingWill": "Yes",
+    "powerOfAttorney": "Jane Doe",
+    "dnr": "No",
+    "lastUpdated": "2023-05-15"
+  },
+  "physicianNotes": "Patient continues to do well with current management. HbA1c shows excellent diabetic control. Blood pressure remains mildly elevated but stable. Patient is compliant with medications and lifestyle modifications. Will continue current regimen and monitor closely.",
+  "nextAppointment": {
+    "date": "2025-04-27",
+    "time": "10:00:00",
+    "type": "Follow-up",
+    "physician": "Dr. Sarah Johnson, MD"
+  },
+  "createdBy": "DR-JOHNSON",
+  "createdDate": "2025-01-27T10:15:00",
+  "lastModified": "2025-01-27T10:15:00",
+  "version": "1.0"
+}
