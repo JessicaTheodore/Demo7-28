@@ -1,0 +1,9 @@
+{
+  "shareNumber": 5,
+  "shareValue": "4c8d76f6af3f7c4153bd014050a1e59e18e3e2d8252deb0d61a51b3f13e55d1ff80164c9b9af2de04104c29c413d8601b41b54c3cde3abf5892622bab72919da6c",
+  "fieldPrime": "1ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "keyId": "master_aes_key",
+  "threshold": 3,
+  "totalShares": 5,
+  "timestamp": 1756955867122
+}

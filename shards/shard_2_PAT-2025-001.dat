@@ -1,0 +1,65 @@
+    "date": "2025-04-27",
+    "physician": "Dr. Sarah Johnson, MD",
+    "time": "10:00:00",
+    "type": "Follow-up"
+  },
+  "email": "jessica.theodore@quinnipiac.edu",
+  "address": {
+    "zip": "08816",
+    "country": "USA",
+    "city": "East Brunswick",
+    "street": "123 Healthcare Drive",
+    "state": "New Jersey",
+    "apartment": "Unit 4B"
+  },
+  "emergencyContact": {
+    "address": "Same as patient",
+    "phone": "609-555-0124",
+    "name": "Vanitha Theodore",
+    "relationship": "Mother"
+  },
+  "labResults": {
+    "kidney": {
+      "creatinine": {
+        "unit": "mg/dL",
+        "normalRange": "0.7-1.3 mg/dL",
+        "value": 1.1,
+        "status": "Normal"
+      },
+      "bun": {
+        "unit": "mg/dL",
+        "normalRange": "7-20 mg/dL",
+        "value": 18,
+        "status": "Normal"
+      }
+    },
+    "glucose": {
+      "unit": "mg/dL",
+      "normalRange": "70-140 mg/dL",
+      "value": 142,
+      "status": "Slightly elevated"
+    },
+    "resultDate": "2025-01-26",
+    "cholesterol": {
+      "hdl": {
+        "unit": "mg/dL",
+        "normalRange": "> 40 mg/dL",
+        "value": 52,
+        "status": "Normal"
+      },
+      "total": {
+        "unit": "mg/dL",
+        "normalRange": "< 200 mg/dL",
+        "value": 195,
+        "status": "Normal"
+      },
+      "ldl": {
+        "unit": "mg/dL",
+        "normalRange": "< 130 mg/dL",
+        "value": 118,
+        "status": "Normal"
+      },
+      "triglycerides": {
+        "unit": "mg/dL",
+        "normalRange": "< 150 mg/dL",
+    

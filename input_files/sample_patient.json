@@ -1,0 +1,60 @@
+{
+  "insurance": {
+    "provider": "Blue Cross Blue Shield",
+    "policyNumber": "BC123456789",
+    "groupNumber": "GRP001"
+  },
+  "allergies": [
+    "Penicillin",
+    "Shellfish"
+  ],
+  "lastName": "Doe",
+  "address": {
+    "zip": "08540",
+    "city": "Princeton",
+    "street": "123 Healthcare Drive",
+    "state": "NJ"
+  },
+  "patientId": "PAT-2025-001",
+  "emergencyContact": {
+    "phone": "609-555-0124",
+    "name": "Jane Doe",
+    "relationship": "Spouse"
+  },
+  "dateOfBirth": "1975-08-15",
+  "currentMedications": [
+    {
+      "dosage": "10mg",
+      "name": "Lisinopril",
+      "frequency": "Daily"
+    },
+    {
+      "dosage": "500mg",
+      "name": "Metformin",
+      "frequency": "Twice daily"
+    }
+  ],
+  "bloodType": "O+",
+  "ssn": "***-**-1234",
+  "firstName": "John",
+  "phone": "609-555-0123",
+  "currentVisit": {
+    "date": "2025-01-27",
+    "assessment": "Diabetes well controlled, blood pressure slightly elevated",
+    "physician": "Dr. Sarah Johnson, MD",
+    "chiefComplaint": "Follow-up for diabetes and hypertension",
+    "plan": "Continue current medications, increase monitoring"
+  },
+  "medicalHistory": [
+    "Hypertension (2018)",
+    "Type 2 Diabetes (2020)"
+  ],
+  "email": "john.doe@email.com",
+  "vitals": {
+    "bloodPressure": "138/82",
+    "heartRate": 76,
+    "temperature": 98.4,
+    "weight": 180,
+    "height": "5'10\""
+  }
+}
