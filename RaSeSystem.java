@@ -11,9 +11,8 @@ import org.json.JSONObject;
 //import org.json.JSONArray;
 
 /**
- * Fixed RaSe System with Ultra-Simple Reed-Solomon
- * Uses the new ultra-simple but real Reed-Solomon implementation
- * Should work reliably for proof-of-concept
+ * Fixed RaSe System with Reed-Solomon
+ * Works reliably for proof-of-concept
  */
 public class RaSeSystem {
 
@@ -34,13 +33,13 @@ public class RaSeSystem {
     private static final String INPUT_DIR = "input_files/";
 
     // Core Components
-    private final UltraSimpleReedSolomon reedSolomon;
+    private final ReedSolomon reedSolomon;
     private final SimpleShamirSSS shamirSSS;
     private final Map<String, PatientMetadata> patientIndex;
     private final SecureRandom random;
 
     public RaSeSystem() {
-        this.reedSolomon = new UltraSimpleReedSolomon(RS_DATA_SHARDS, RS_PARITY_SHARDS);
+        this.reedSolomon = new ReedSolomon(RS_DATA_SHARDS, RS_PARITY_SHARDS);
         this.shamirSSS = new SimpleShamirSSS(SSS_THRESHOLD, SSS_TOTAL_SHARES);
         this.patientIndex = new HashMap<>();
         this.random = new SecureRandom();
@@ -48,8 +47,8 @@ public class RaSeSystem {
         initializeStorageDirectories();
         loadPatientIndex();
 
-        System.out.println("=== Fixed RaSe System Initialized ===");
-        System.out.println("Ultra-Simple Reed-Solomon: " + RS_DATA_SHARDS + "+" + RS_PARITY_SHARDS + " (can lose " + RS_PARITY_SHARDS + " shards)");
+        System.out.println("===  RaSe System Initialized ===");
+        System.out.println("Reed-Solomon: " + RS_DATA_SHARDS + "+" + RS_PARITY_SHARDS + " (can lose " + RS_PARITY_SHARDS + " shards)");
         System.out.println("Shamir SSS: " + SSS_THRESHOLD + "-of-" + SSS_TOTAL_SHARES + " threshold");
     }
 
@@ -113,10 +112,10 @@ public class RaSeSystem {
 
             System.out.println("Encrypted " + jsonData.length() + " bytes -> " + encryptedData.length + " encrypted bytes");
 
-            // Step 3: Split encrypted data with Ultra-Simple Reed-Solomon
+            // Step 3: Split encrypted data with Reed-Solomon
             List<byte[]> dataShards = reedSolomon.encode(encryptedData);
             storeDataShards(patientId, dataShards);
-            System.out.println("✓ Created " + RS_TOTAL_SHARDS + " data shards using Ultra-Simple RS");
+            System.out.println("✓ Created " + RS_TOTAL_SHARDS + " data shards using RS");
 
             // Step 4: Split AES key with Shamir's Secret Sharing
             List<SimpleShamirSSS.Share> keyShares = shamirSSS.splitSecret(aesKey.getEncoded());
@@ -165,7 +164,7 @@ public class RaSeSystem {
             SecretKey aesKey = new SecretKeySpec(aesKeyBytes, "AES");
             System.out.println("✓ AES key reconstructed from " + keyShares.size() + " shares");
 
-            // Step 2: Reconstruct encrypted data from shards using Ultra-Simple RS
+            // Step 2: Reconstruct encrypted data from shards using RS
             List<byte[]> dataShards = loadDataShards(patientId);
             boolean[] shardPresent = new boolean[RS_TOTAL_SHARDS];
             int availableShards = 0;
@@ -364,10 +363,10 @@ public class RaSeSystem {
     }
 
     /**
-     * ULTRA-SIMPLE Reed-Solomon Implementation
+     * Reed-Solomon Implementation
      * Real Galois Field math but much simpler reconstruction logic
      */
-    private static class UltraSimpleReedSolomon {
+    private static class ReedSolomon {
         private final int dataShards;
         private final int parityShards;
         private final int totalShards;
@@ -388,14 +387,14 @@ public class RaSeSystem {
             LOG_TABLE[0] = -1;
         }
         
-        public UltraSimpleReedSolomon(int dataShards, int parityShards) {
+        public ReedSolomon(int dataShards, int parityShards) {
             this.dataShards = dataShards;
             this.parityShards = parityShards;
             this.totalShards = dataShards + parityShards;
         }
         
         /**
-         * ULTRA-SIMPLE ENCODING
+         * ENCODING
          */
         public List<byte[]> encode(byte[] data) {
             // Add length header (4 bytes) + data
@@ -447,7 +446,7 @@ public class RaSeSystem {
         }
         
         /**
-         * ULTRA-SIMPLE DECODING
+         * DECODING
          */
         public byte[] decode(List<byte[]> shards, boolean[] shardPresent) {
             int availableCount = 0;
@@ -708,7 +707,7 @@ public class RaSeSystem {
             String[] patientFiles = {"PatientDawit.json", "PatientJessica.json"};
             List<String> processedPatientIds = new ArrayList<>();
 
-            System.out.println("\n=== PROCESSING PATIENT FILES WITH ULTRA-SIMPLE REED-SOLOMON ===");
+            System.out.println("\n=== PROCESSING PATIENT FILES WITH REED-SOLOMON ===");
 
             // Process each patient file
             for (String filename : patientFiles) {
@@ -741,7 +740,7 @@ public class RaSeSystem {
 
             // Test ransomware resilience with the fixed implementation
             if (!processedPatientIds.isEmpty()) {
-                System.out.println("\n=== TESTING RANSOMWARE RESILIENCE WITH ULTRA-SIMPLE RS ===");
+                System.out.println("\n=== TESTING RANSOMWARE RESILIENCE WITH RS ===");
                 
                 String testPatientId = processedPatientIds.get(0);
                 System.out.println("Testing with patient: " + testPatientId);
@@ -758,15 +757,15 @@ public class RaSeSystem {
                     boolean recoverySuccessful = originalData.toString().equals(recoveredData.toString());
                     
                     if (recoverySuccessful) {
-                        System.out.println("\n🎉 SUCCESS! Ultra-Simple Reed-Solomon recovered the data!");
+                        System.out.println("\n SUCCESS! Reed-Solomon recovered the data!");
                         System.out.println("✓ Patient data fully recovered despite ransomware attack");
                         System.out.println("✓ Data integrity maintained through distributed storage");
                     } else {
-                        System.out.println("\n⚠️ Recovery partially successful but data differs");
+                        System.out.println("\n  Recovery partially successful but data differs");
                     }
                     
                 } catch (Exception e) {
-                    System.err.println("\n❌ Recovery failed: " + e.getMessage());
+                    System.err.println("\n Recovery failed: " + e.getMessage());
                     System.out.println("This suggests the attack exceeded the system's recovery capabilities");
                 }
             }
